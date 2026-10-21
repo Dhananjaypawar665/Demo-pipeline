@@ -1,9 +1,12 @@
 pipeline {
-   agent any
-   stages {
-     stage('Build')  {  steps  {  echo  'Building...'  }  }
-     stage('Test')  {  steps  {  echo  'Testinng...'  }  }
-     stage('Done')  {  steps  {  echo  'Pipeline complete'  }  }
-   }
+  agent any
+  environment { APP_NAME = 'demo' }
+  stages {
+    stages('Build') {
+      environment { BUILD_MODE = 'production' }
+      steps {
+        bat 'echo %APP_NAME% %BUILD_MODE%'
+      }
+    }
+  }
 }
-                                
