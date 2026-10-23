@@ -9,4 +9,5 @@ pipeline  {
       stage('Lint')  {  steps  {  bat  'echo Lint'  }  }  }  }
     stage('Test')  {  steps  {  bat  'echo Test'  }  }
     stage('Package')  {  steps  {  bat  'echo Package'  }  }
-      
+  }
+}
